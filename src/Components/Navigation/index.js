@@ -1,60 +1,74 @@
 import React from "react";
 
+function burgerActive(e) {
+    if (typeof window !== 'undefined' && document) {
+        const navBurger = document.getElementById('navBurger');
+        const navMenu = document.getElementById('navbarBasicExample');
+        if (navBurger.classList.contains('is-active')) {
+            navBurger.classList.remove('is-active');
+            navMenu.classList.remove('is-active');
+        } else {
+            navBurger.classList.add('is-active');
+            navMenu.classList.add('is-active');
+        }
+    }
+}
+
 const Navigation = () => {
     return (
-        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
+        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <div className="navbar-brand">
+                <a className="navbar-item" href="https://bulma.io">
                     <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="" />
                 </a>
 
-                <a href="/" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <button id="navBurger" className="navbar-burger burger" aria-label="menu" data-target="navbarBasicExample" onClick={burgerActive}>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </button>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a href="/" class="navbar-item">
+            <div id="navbarBasicExample" className="navbar-menu">
+                <div className="navbar-start">
+                    <a href="/" className="navbar-item">
                         Home
                         </a>
 
-                    <a href="/layouts" class="navbar-item">
+                    <a href="/layouts" className="navbar-item">
                         Layouts
                         </a>
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <button class="navbar-link">
+                    <div className="navbar-item has-dropdown is-hoverable">
+                        <button className="navbar-link">
                             More
                             </button>
 
-                        <div class="navbar-dropdown">
-                            <a href="/about" class="navbar-item">
+                        <div className="navbar-dropdown">
+                            <a href="/about" className="navbar-item">
                                 About
                                 </a>
-                            <a href="/jobs" class="navbar-item">
+                            <a href="/jobs" className="navbar-item">
                                 Jobs
                                 </a>
-                            <a href="/contact" class="navbar-item">
+                            <a href="/contact" className="navbar-item">
                                 Contact
                                 </a>
-                            <hr class="navbar-divider" />
-                            <a href="/report-an-issue" class="navbar-item">
+                            <hr className="navbar-divider" />
+                            <a href="/report-an-issue" className="navbar-item">
                                 Report an issue
                                 </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a href="/signup" class="button is-primary">
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="buttons">
+                            <a href="/signup" className="button is-primary">
                                 <strong>Sign up</strong>
                             </a>
-                            <a href="/login" class="button is-light">
+                            <a href="/login" className="button is-light">
                                 Log in
                             </a>
                         </div>

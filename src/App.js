@@ -8,18 +8,19 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      <section class="hero is-link is-fullheight-with-navbar">
-        <div class="hero-body">
-          <div class="container">
-            <p class="title">
+      <section className="hero is-link is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container">
+            <p className="title">
               Fullheight hero with navbar
             </p>
           </div>
         </div>
       </section>
       <Router>
-        {routes.map(route => (
+        {routes.map((route, i) => (
           <Route
+            key={i}
             path={route.path}
             render={route.component}
           />
