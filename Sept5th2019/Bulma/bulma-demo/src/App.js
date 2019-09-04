@@ -3,7 +3,6 @@ import Navigation from './Components/Navigation';
 import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import routes from './Routes';
 import 'bulma/bulma.sass';
-import './App.css';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
         {routes.map(route => (
           <Route
             path={route.path}
+            exact
             render={route.component}
           />
         ))}
