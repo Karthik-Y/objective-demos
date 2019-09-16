@@ -1,21 +1,36 @@
 import React from 'react';
 import Navigation from './Components/Navigation';
-import { BrowserRouter as Router, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './Routes';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
       <Navigation />
       <Router>
-        {routes.map(route => (
-          <Route
-            path={route.path}
-            render={route.component}
-          />
-        ))}
+        <Switch>
+          {routes.map(route => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={true}
+              render={route.component}
+            />
+          ))}
+          <Route component={NoMatch} />
+        </Switch>
       </Router>
+    </div>
+  );
+}
+
+function NoMatch({ location }) {
+  return (
+    <div>
+      <h3>
+        No match for <code>{location.pathname}</code>
+      </h3>
     </div>
   );
 }

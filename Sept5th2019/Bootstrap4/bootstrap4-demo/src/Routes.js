@@ -1,10 +1,10 @@
-import App from './App';
+import Home from './Components/Home';
 import Layouts from './Components/Layouts';
 
 const routes = [
     {
         path: "/",
-        component: App
+        component: Home
     },
     {
         path: "/layouts",
