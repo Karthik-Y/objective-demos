@@ -3,6 +3,7 @@ import Navigation from './Components/Navigation';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './Routes';
 import 'bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.scss';
 
 function App() {
