@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from './Components/Navigation';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import routes from './Routes';
+import 'bootstrap';
 import './App.scss';
 
 function App() {
